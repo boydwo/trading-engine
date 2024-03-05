@@ -1,3 +1,5 @@
+use rust_decimal_macros::dec;
+
 mod matching_engine;
 
 use matching_engine::orderbook::{Order, BidOrAsk, OrderBook};
@@ -7,8 +9,8 @@ fn main() {
     let buy_order_from_bob = Order::new(BidOrAsk::Bid, 2.45);
 
     let mut orderBook = OrderBook::new();
-    orderBook.add_order(4.4, buy_order_from_alice);
-    orderBook.add_order(4.4, buy_order_from_bob);
+    orderBook.add_order(dec!(4.4), buy_order_from_alice);
+    orderBook.add_order(dec!(4.4), buy_order_from_bob);
 
 
   //  print!("{:?}", orderBook);
